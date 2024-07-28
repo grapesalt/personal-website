@@ -1,0 +1,23 @@
+---
+import Sidebar from '../components/Sidebar'
+import '../global.css'
+
+const { title } = Astro.props
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+  </head>
+  <body class="bg-white dark:bg-[#171919] text-black">
+    <div class="flex">
+      <Sidebar client:only />
+
+      <main>
+        <slot />
+      </main>
+    </div>
+  </body>
+</html>

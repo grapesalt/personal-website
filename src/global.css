@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+@font-face {
+  font-family: 'Gooper';
+  src: url('/fonts/Gooper-Black.woff2') format('woff2');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gooper';
+  src: url('/fonts/Gooper-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gooper';
+  src: url('/fonts/Gooper-Light.woff2') format('woff2');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+::-moz-selection {
+  /* Code for Firefox */
+  background: rgba(253, 196, 53, 0.5);
+}
+
+::selection {
+  background: rgba(253, 196, 53, 0.5);
+}

@@ -1,0 +1,17 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro'
+
+const blogs = await Astro.glob('./*.mdx')
+---
+
+<SiteLayout title="Ramblings">
+  {
+    blogs.map((post) => {
+      return (
+        <li>
+          <a href={post.url}>{post.frontmatter.title}</a>
+        </li>
+      )
+    })
+  }
+</SiteLayout>

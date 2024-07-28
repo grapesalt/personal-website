@@ -1,0 +1,41 @@
+---
+import Sidebar from '../components/Sidebar'
+import '../global.css'
+const { title, pubDate, minutesRead, tags } = Astro.props.frontmatter
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+  </head>
+  <body class="bg-white dark:bg-[#171919] text-black">
+    <div class="flex">
+      <Sidebar client:only />
+
+      <div class="block w-full h-full dark:text-[#E5E2DF]">
+        <div class="my-10 font-mono text-center">
+          <h1 class="font-[Gooper] font-bold uppercase text-3xl mb-5">{title}</h1>
+          <p>{minutesRead} | {pubDate}</p>
+          <div class="flex justify-center">
+            {
+              tags.map((tag) => {
+                return <p class="bg-yellow-400 bg-opacity-50 p-1 m-2 rounded-xl font-mono text-sm">{tag}</p>
+              })
+            }
+          </div>
+        </div>
+
+        <article
+          class="m-auto items-center justify-center
+                 prose prose-h1:text-2xl prose-headings:font-mono
+                 prose-headings:font-normal prose-h2:text-xl
+                 prose-headings:underline prose-headings:dark:decoration-[#313537] prose-headings:dark:text-[#E5E2DF] font-mono max-w-[100ch]
+                 prose-headings:text-lg text-wrap dark:text-[#E5E2DF]">
+          <slot />
+        </article>
+      </div>
+    </div>
+  </body>
+</html>
